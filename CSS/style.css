@@ -1,0 +1,49 @@
+/* 
+Lien palette de couleur
+
+https://colorhunt.co/palette/219713 
+https://colorhunt.co/palette/225760
+https://colorhunt.co/palette/2763
+https://colorhunt.co/palette/17117
+
+*/
+
+/* =========================== FONT GOOGLE : ROBOTO regular 400, medium 500, bold 700 =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,500&display=swap');
+
+/* =========================== Variables CSS =========================== */
+:root{
+    /* ========== taille header ========== */
+    --header-height : 5rem; /*80px*/
+
+    /* ========== Couleurs ========== */
+    --first-color: ;
+    --second-color: ;
+
+    /* ========== font size, familly, weight ========== */
+    --font-roboto: 'roboto', sans-serif;
+
+    --fsize-normal: 16px;
+    --fsize-h2: 22px;
+    --fsize-big-title: 50px;
+
+    @media screen (max-width: 768px;) {
+        --fsize-normal: 14px;
+        --fsize-h2: 20px;
+        --fsize-big-title: 40px;
+    }
+}
+
+
+/* =========================== Classes Générales =========================== */
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-size: var(--fsize-normal);
+    font-family: var(--font-roboto);
+}
+
