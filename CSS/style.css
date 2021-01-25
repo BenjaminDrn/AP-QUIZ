@@ -17,21 +17,14 @@ https://colorhunt.co/palette/17117
     --header-height : 5rem; /*80px*/
 
     /* ========== Couleurs ========== */
-    --first-color: ;
+    --first-color: #30475e;
     --second-color: ;
 
     /* ========== font size, familly, weight ========== */
     --font-roboto: 'roboto', sans-serif;
 
-    --fsize-normal: 16px;
-    --fsize-h2: 22px;
-    --fsize-big-title: 50px;
-
-    @media screen (max-width: 768px;) {
-        --fsize-normal: 14px;
-        --fsize-h2: 20px;
-        --fsize-big-title: 40px;
-    }
+    --font-size-QuizName: 18px;
+    --font-size-NbrQuestions: 14px;
 }
 
 
@@ -39,11 +32,44 @@ https://colorhunt.co/palette/17117
 *, ::before, ::after{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    font-size: var(--fsize-normal);
     font-family: var(--font-roboto);
 }
 
+
+/* =========================== wrapper =========================== */
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 20px;
+    
+}
+
+/* =========================== quiz =========================== */
+#quiz{
+    width: 100%;
+    background: var(--first-color);
+    color: #ffffff;
+    padding: 15px 0px 15px 35px;
+    border-radius: 40px;
+    box-shadow: 0px 10px 15px rgba(30, 51, 71, 0.418);
+    transition: all 0.3s;
+    user-select: none;
+    cursor: pointer;
+}
+#quiz:hover{
+    box-shadow: 0px 10px 15px rgba(30, 51, 71, 0.671);
+}
+#quiz .quiz__name {
+    font-size: var(--font-size-QuizName);
+    text-transform: uppercase;
+}
+#quiz .number__questions{
+    color: #95caff;
+    font-weight: 600;
+    font-size: var(--font-size-NbrQuestions);
+}
