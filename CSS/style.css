@@ -1,28 +1,14 @@
-/* 
-Lien palette de couleur
-
-https://colorhunt.co/palette/219713 
-https://colorhunt.co/palette/225760
-https://colorhunt.co/palette/2763
-https://colorhunt.co/palette/17117
-
-*/
-
-/* =========================== FONT GOOGLE : ROBOTO regular 400, medium 500, bold 700 =========================== */
+/* =========================== FONT GOOGLE : ROBOTO =========================== */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,500&display=swap');
 
 /* =========================== Variables CSS =========================== */
 :root{
-    /* ========== taille header ========== */
-    --header-height : 5rem; /*80px*/
-
     /* ========== Couleurs ========== */
     --first-color: #30475e;
     --second-color: ;
 
     /* ========== font size, familly, weight ========== */
     --font-roboto: 'roboto', sans-serif;
-
     --font-size-QuizName: 18px;
     --font-size-NbrQuestions: 14px;
 }
