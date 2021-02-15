@@ -22,6 +22,7 @@
 body {
     margin: 0;
     font-family: var(--font-roboto);
+    overflow: hidden;
 }
 
 /* =========================== NAVBAR =========================== */
@@ -40,61 +41,79 @@ body {
     color:  #fff;
 }
 
-/* =========================== wrapper =========================== */
-.wrapper {
-    margin: 30px 0 0 0;
+/* =========================== quiz =========================== */
+.quiz-container {
+    display: none;
+    margin: 30px 0;
     padding: 0 20px;
 }
-
-/* =========================== quiz =========================== */
-#quiz{
+.quiz-container.show {
+    display: block;
+}
+.quiz{
     width: 100%;
     display: flex;
     justify-content: space-between;
     background: var(--first-color);
     color: #ffffff;
     padding:  15px 20px 15px 35px;
+    margin-bottom: 30px;
     border-radius: 40px;
     box-shadow: 0px 10px 15px rgba(30, 51, 71, 0.4);
     transition: all 0.3s;
     user-select: none;
 }
-#quiz .quiz__infos .quiz__name {
+.quiz__infos {
+    width: calc(100% - 70px);
+    align-items: center;
+    flex-wrap: wrap;
+}
+.quiz__name {
+    height: 22px;
+    overflow: hidden;
+}
+.number__questions{
+    height: 17px;
+    overflow: hidden;
+}
+
+.quiz .quiz__infos .quiz__name {
     font-size: var(--font-size-QuizName);
     text-transform: uppercase;
 }
-#quiz .quiz__infos .number__questions{
+.quiz .quiz__infos .number__questions{
     color: #9db7d1;
     font-weight: 500;
     font-size: var(--font-size-NbrQuestions);
 }
-#quiz .launch__btn {
+.quiz .launch__btn {
+    width: 40px;
+    height: 40px;
     background: #fff;
     color: var(--first-color);
     display: flex;
     align-items: center;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 10px 20px;
+    padding: 10px;
     border-radius: 30px;
     cursor: pointer;
 }
-#quiz .launch__btn p { margin-right: 10px; }
-#quiz .launch__btn .bxs-rocket::before{ font-size: 18px; }
+.quiz .launch__btn p { margin-right: 10px; display: none;}
+.quiz .launch__btn .bxs-rocket::before{ font-size: 20px;}
 
 /* =========================== questions =========================== */
 #questions-container{
+    display: none;
     width: 100%;
     height: calc(100vh - 80px);
     position: absolute;
     top: 80px;
-    right: -100%;
     padding: 20px;
     background: #fff;
-    transition: all 0.3s;
 }
-.show {
-    right: 0;
+#questions-container.show {
+    display: block;
 }
 
 #questions-title{
@@ -112,23 +131,85 @@ body {
     display: flex;
     padding: 15px;
     cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    user-select: none;
 }
+
+#questions button.correct {
+    border: 2px solid #00AA00;
+}
+
+#questions button.wrong {
+    border: 2px solid #AA0000;
+}
+
 #submit-questions button {
+    display: none;
     width: 100%;
     margin-top: 20px;
-    padding: 15px;
+    padding: 15px ;
     cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    background: #30475e;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#submit-questions button.active {
+    display: block;
+}
+
+/* =========================== score =========================== */
+
+#score-container {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    display: none; /*transfom display flex*/
+    align-items: center;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+#score-container.show {
+    display: flex;
+}
+.score__infos {
+    width: 90%;
+    /* height: 250px; */
+    position: relative;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 0 auto;
+    background: #fff;
+}
+.score__infos h1 {
+    margin-bottom: 10px;
+}
+.button__Score{
+    margin-top: 20px;
+}
+
+.score__infos button {
+    width: 100%;
+    padding: 15px ;
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    background: #30475e;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    outline: none;
+    user-select: none;
 }
 
 @media screen and (min-width : 768px){
-    #questions button{
-        width: calc((100% - 20px)/2);
-        
-    }
-    
+    #questions button{width: calc((100% - 20px)/2);}
 }
-
-
-
-
-
