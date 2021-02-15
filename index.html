@@ -16,35 +16,36 @@
         <h1>Brand.</h1>
     </nav>
 
-    <main class="wrapper">
-        
-        <div id="quiz">
-            <div class="quiz__infos">
-                <h1 id="name-Of-Quiz" class="quiz__name">Lorem</h1>
-                <p class="number__questions"><span id="number-Of-Questions"></span> questions</p>
+    <main>
+        <div class="quiz-container show"></div>
+
+        <div id="questions-container">
+    
+            <h1 id="questions-title"></h1>
+            
+            <div id="questions">
             </div>
-            <div class="launch__btn">
-                <p>Lancer le quiz</p>
-                <i class='bx bxs-rocket'></i>
+            <div id="submit-questions">
+                <button class="suivant">Suivant</button>
+                <button class="score">Afficher le score</button>
             </div>
         </div>
 
-        <div id="questions-container" class="show">
-    
-            <h1 id="questions-title">Name</h1>
-            
-            <div id="questions">
-                <button>Lorem</button>
-                <button>Lorem</button>
-                <button>Lorem</button>
-                <button>Lorem</button>
-            </div>
-            <div id="submit-questions">
-                <button>Valider</button>
+        <div id="score-container">
+            <div class="score__infos">
+                <h1>Score</h1>
+                <p class="afficherScore"></p>
+
+                <div class="button__Score">
+                    <form action="">
+                        <button class="change-quiz" type="submit">Changer de quiz</button>
+                    </form>
+                </div>
             </div>
         </div>
-        
+
     </main>
    
+    <script src="JS/app.js"></script>
 </body>
 </html>
