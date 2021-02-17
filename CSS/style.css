@@ -132,7 +132,7 @@ body {
     padding: 15px;
     cursor: pointer;
     border-radius: 8px;
-    border: none;
+    border: 1px solid #AAA;
     outline: none;
     user-select: none;
 }
