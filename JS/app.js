@@ -11,6 +11,13 @@ function lancement() {
 	.then(response => response.json())
 	.then(data => {
 
+        if (data['QUIZ'].length == 0){
+            let h1 = document.createElement('h1');
+            h1.innerHTML = "Ajouter un quiz grâce au fichier .json !";
+
+            listeQuiz.appendChild(h1);
+        }
+
         for (let i = 0; i < data['QUIZ'].length; i++){
             let erreur = false;
 
@@ -105,6 +112,7 @@ function showQuestion(nbQuiz){
     
     for(let j = 0; j < tableQuestions[tirageQuestion].proposition.length; j++){
         let buttonReponse = document.createElement('button');
+        buttonReponse.classList.add("question");
         buttonReponse.classList.add("question-" + j);
         buttonReponse.value = tableQuestions[tirageQuestion].proposition[j];
         buttonReponse.textContent = tableQuestions[tirageQuestion].proposition[j];
@@ -112,12 +120,17 @@ function showQuestion(nbQuiz){
         
         buttonReponse.addEventListener('click', () => {
             if (buttonReponse.value == reponseQuestion){
+                for (let r = 0; r < tableQuestions[tirageQuestion].proposition.length; r++){
+                    let selectQuestions = document.querySelector('.question-' + r);
+                    selectQuestions.disabled = true;
+                }
+
                 buttonReponse.classList.add("correct");
                 score.push(1);
             } else if (buttonReponse.value != reponseQuestion){
-                
                 for (let r = 0; r < tableQuestions[tirageQuestion].proposition.length; r++){
                     let selectQuestions = document.querySelector('.question-' + r);
+                    selectQuestions.disabled = true;
                     
                     if (selectQuestions.value == reponseQuestion){
                         selectQuestions.classList.add("correct");
