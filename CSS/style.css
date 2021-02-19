@@ -13,7 +13,7 @@
     --font-size-NbrQuestions: 14px;
 }
 
-/* =========================== Classes Générales =========================== */
+/* =========================== Classes GÃŠnÃŠrales =========================== */
 *, ::before, ::after{
     margin: 0;
     padding: 0;
@@ -22,7 +22,6 @@
 body {
     margin: 0;
     font-family: var(--font-roboto);
-    overflow: hidden;
 }
 
 /* =========================== NAVBAR =========================== */
@@ -132,7 +131,7 @@ body {
     padding: 15px;
     cursor: pointer;
     border-radius: 8px;
-    border: 1px solid #AAA;
+    border: 1px solid #CCC;
     outline: none;
     user-select: none;
 }
@@ -149,6 +148,7 @@ body {
     display: none;
     width: 100%;
     margin-top: 20px;
+    margin-bottom: 20px;
     padding: 15px ;
     cursor: pointer;
     border-radius: 30px;
@@ -181,8 +181,8 @@ body {
     display: flex;
 }
 .score__infos {
-    width: 90%;
-    /* height: 250px; */
+    width: 30%;
+    height: 250px;
     position: relative;
     padding: 20px;
     border-radius: 20px;
@@ -199,6 +199,7 @@ body {
 .score__infos button {
     width: 100%;
     padding: 15px ;
+    margin-top: 40px;
     cursor: pointer;
     border-radius: 30px;
     border: none;
